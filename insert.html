@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>信息导入页面</title>
+</head>
+<script src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
+<link href="./insert.css" rel="stylesheet" type="text/css"/>
+<script src="./insert.js"></script>
+<script src="./map.js"></script>
+
+<body>
+<div class="all_box">
+
+    <div class="top_box">
+        <div class="top_search" style="display: none">
+            <input  class="input_txt_main"/>
+            <div class="serach_btn">搜索</div>
+        </div>
+        <div class="top_putin">
+
+            <a class="parten_in">
+                合作伙伴添加
+            </a>
+            <a class="lince_in">
+                备案添加
+            </a>
+            <a class="can_lince">
+                可备案
+            </a>
+            <a class="dontneed_lince">
+                免备案
+            </a>
+        </div>
+    </div>
+
+    <div class="info_box">
+        <div class="left_list_box">
+            <p>合作伙伴记录</p>
+            <p style="background-color: #ccc;padding-top: 5px;padding-bottom: 5px;">
+                <span>省</span>
+                <span>市</span>
+                <span>姓名</span>
+                <span>ID️</span>
+                <span>操作</span>
+            </p>
+            <ul class="left_ul_input">
+
+            </ul>
+        </div>
+
+        <div class="right_list_box">
+            <p>备案记录</p>
+            <p style="background-color: #ccc;padding-top: 5px;padding-bottom: 5px;">
+                <span>省</span>
+                <span>市</span>
+                <span>银行</span>
+                <span>操作️</span>
+            </p>
+            <ul class="right_ul_input">
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="parten_in_main">
+        <div class="parten_all" style="text-align: center">
+            合伙人添加
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">姓名</span>
+            <input  class="input_txt_main name1"/>
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">省</span>
+            <select class="province_all_select" id="province_select">
+            </select>
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">市</span>
+            <select class="city_all_select">
+
+            </select>
+        </div>
+
+    <div class="parten_all">
+        <span class="ib_name">编号</span>
+        <input  class="input_txt_main id1"/>
+    </div>
+        <div class="parten_all" style="text-align: center">
+        <a class="parten_in_sure">
+            确定
+        </a>
+        </div>
+        <div class="close_parten">×</div>
+    </div>
+
+
+    <div class="lince_in_main">
+        <div class="parten_all" style="text-align: center">
+            备案添加（单选，同地区分批次添加）
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">省</span>
+            <select class="province_all_select2" id="province_select2">
+            </select>
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">市</span>
+            <select class="city_all_select2">
+
+            </select>
+        </div>
+        <div class="parten_all" style="height: 100px;">
+            <p class="bank_li"><input class="cz_bank" type="checkbox" value="" />城站支行</p>
+            <p class="bank_li"><input class="gx_bank" type="checkbox" value="" />哈尔滨顾乡支行</p>
+            <p class="bank_li"><input class="tz_bank" type="checkbox" value="" />台州路桥支行</p>
+        </div>
+        <div class="parten_all" style="text-align: center">
+            <a class="lince_in_sure">
+                确定
+            </a>
+        </div>
+        <div class="close_lince">×</div>
+    </div>
+
+    <div class="can_lince_main">
+        <div class="parten_all">
+            <span class="ib_name">省</span>
+            <select class="province_all_select3" id="province_select3">
+            </select>
+        </div>
+        <div class="parten_all">
+            <span class="ib_name">市</span>
+            <select class="city_all_select3">
+            </select>
+        </div>
+        <div class="parten_all" style="text-align: center">
+            <a class="can_lince_sure">
+                确定
+            </a>
+        </div>
+    </div>
+
+</div>
+</body>
+<script>
+
+
+    $(function(){
+        //加载两个表的数据
+        loadlicensing()
+        loadpartner()
+        $(".parten_in").on("click",function(){
+            addparten()
+            $(".parten_in_main").show()
+        })
+        $('.lince_in').on("click",function(){
+            addlince()
+            $(".lince_in_main").show()
+        })
+        $(".can_lince").on("click",function () {
+            can_lince()
+            $(".can_lince_main").show()
+        })
+        function addparten() { //增加合伙人
+            var selectdata = '';
+            window.province.forEach(function (t) {
+                var province = t.name;
+                selectdata +='<option value='+province+'>'+province+'</option>'
+            });
+            $(".province_all_select").html(selectdata);
+            var selectdata_city = '<option value=房山区>房山区</option><option value=大兴区>大兴区</option><option value=通州区>通州区</option><option value=西城区>西城区</option><option value=丰台区>丰台区</option><option value=朝阳区>朝阳区</option><option value=顺义区>顺义区</option><option value=怀柔区>怀柔区</option><option value=延庆县>延庆县</option><option value=昌平区>昌平区</option><option value=门头沟区>门头沟区</option><option value=密云县>密云县</option><option value=平谷区>平谷区</option><option value=海淀区>海淀区</option><option value=石景山区>石景山区</option>';
+            $(".city_all_select").html(selectdata_city);
+            $("#province_select").change(function(){
+                var selectdata_city = '';
+                var in_province = $(this).val();
+                window.chinamap.forEach(function(v,k){
+                    if(v.province == in_province){
+                        var citylist = v.city;
+                        citylist.forEach(function (t) {
+                            var city = t.name;
+                            selectdata_city +='<option value='+city+'>'+city+'</option>'
+                        })
+
+                        $(".city_all_select").html(selectdata_city);
+                    }
+                })
+            });
+            $(".parten_in_sure").on("click",function(){
+                var name = $(".name1").val()
+                var province = $(".province_all_select").val()
+                var city = $(".city_all_select").val()
+                var id =$(".id1").val()
+
+                    $.ajax({
+                        url: "http://39.108.136.58:8080/add/partner",    //备案所有
+                        dataType: "json",   //返回格式为json
+                        data: {
+                            province: province,
+                            city:city,
+                            name:name,
+                            number:id
+                        },    //参数值
+                        type: "GET",   //请求方式
+                        success: function (req) {
+                            alert('增加成功')
+                            console.log(req);
+                        }
+                    })
+
+            })
+
+            $(".close_parten").on("click",function () {
+                $(".parten_in_main").hide()
+            })
+
+        }
+
+        function addlince(){//增加备案
+            var selectdata = '';
+            window.province.forEach(function (t) {
+                var province = t.name;
+                selectdata +='<option value='+province+'>'+province+'</option>'
+            });
+            $(".province_all_select2").html(selectdata);
+            var selectdata_city = '<option value="房山区">房山区</option><option value="大兴区">大兴区</option><option value="通州区">通州区</option><option value="西城区">西城区</option><option value="丰台区">丰台区</option><option value="朝阳区">朝阳区</option><option value=顺义区>顺义区</option><option value=怀柔区>怀柔区</option><option value=延庆县>延庆县</option><option value=昌平区>昌平区</option><option value=门头沟区>门头沟区</option><option value=密云县>密云县</option><option value=平谷区>平谷区</option><option value=海淀区>海淀区</option><option value=石景山区>石景山区</option>';
+            $(".city_all_select2").html(selectdata_city);
+
+            $("#province_select2").change(function(){
+                var selectdata_city = '';
+                var in_province = $(this).val();
+                window.chinamap.forEach(function(v,k){
+                    if(v.province == in_province){
+                        var citylist = v.city;
+                        citylist.forEach(function (t) {
+                            var city = t.name;
+                            selectdata_city +='<option value='+city+'>'+city+'</option>'
+                        })
+
+                        $(".city_all_select2").html(selectdata_city);
+                    }
+                })
+            });
+
+            $(".close_lince").on("click",function () {
+                $(".lince_in_main").hide()
+            })
+            $(".lince_in_sure").on("click",function(){
+                var checkbox1 = $(".cz_bank").is(':checked')?'城站支行':''
+                var checkbox2 = $(".gx_bank").is(':checked')?'哈尔滨顾乡支行':''
+                var checkbox3 = $(".tz_bank").is(':checked')?'台州路桥支行':''
+                var province = $(".province_all_select2").val()
+                var city = $(".city_all_select2").val()
+                var finalbank = '';
+                if(checkbox1 != ''){
+                    finalbank+=checkbox1+','
+                }
+                if(checkbox2 != ''){
+                    finalbank+=checkbox2+','
+                }
+                if(checkbox3 != ''){
+                    finalbank+=checkbox3
+                }
+                var finalbank =finalbank.substring(finalbank.length-1,finalbank.length)==','?finalbank.substring(0,finalbank.length-1):finalbank
+
+                $.ajax({
+                    url: "http://39.108.136.58:8080/add/licensing",    //备案所有
+                    dataType: "json",   //返回格式为json
+                    data: {
+                        province: province,
+                        city:city,
+                        bank:finalbank
+                    },    //参数值
+                    type: "GET",   //请求方式
+                    success: function (req) {
+                        alert('增加成功')
+                        console.log(req);
+                    }
+                })
+
+            })
+
+
+        }
+
+        function loadlicensing(){
+            $.ajax({
+                url: "http://39.108.136.58:8080/query/licensing",    //备案所有
+                dataType: "json",   //返回格式为json
+                data: {},    //参数值
+                type: "GET",   //请求方式
+                success: function (req) {
+                    var getdata = req.service_response.business_response.businessData;
+                    var licentxt = ''
+                    getdata.forEach(function(v,k){
+                        licentxt+='<li class="list_input"><span>'+v.province+'</span><span>'+v.city+'</span><span>'+v.bank+'</span><span class="delete_list" data-id="'+v.id+'">×</span></li>'
+                    })
+                    $('.right_ul_input').html(licentxt)
+                    $(".delete_list").on("click",function () {
+                        var mymessage=confirm("确定删除吗？");
+                        if(mymessage==true)
+                        {
+                            var dataid = $(this).attr('data-id');
+                            $.ajax({
+                                url: "http://39.108.136.58:8080/del/licensing",    //备案所有
+                                dataType: "json",   //返回格式为json
+                                data: {
+                                    id:dataid
+                                },    //参数值
+                                type: "GET",   //请求方式
+                                success: function (req) {
+                                    alert('成功')
+                                    loadlicensing()
+                                }
+                            })
+                        }else if(mymessage==false)
+                        {
+                            return;
+                        }
+
+
+                    })
+                }
+            })
+        }
+        function loadpartner(){
+            $.ajax({
+                url: "http://39.108.136.58:8080/query/partner",    //备案所有
+                dataType: "json",   //返回格式为json
+                data: {},    //参数值
+                type: "GET",   //请求方式
+                success: function (req) {
+                    var getdata = req.service_response.business_response.businessData;
+                    var licentxt = ''
+                    getdata.forEach(function(v,k){
+                        licentxt+='<li class="list_input2"><span>'+v.province+'</span><span>'+v.city+'</span><span>'+v.name+'</span><span style="font-size: 12px;">'+v.user_id+'</span><span class="delete_list2" data-id="'+v.id+'">×</span></li>'
+                    })
+                    $('.left_ul_input').html(licentxt)
+                    $(".delete_list2").on("click",function () {
+                        var dataid = $(this).attr('data-id');
+
+                            var mymessage=confirm("确定删除吗？");
+                            if(mymessage==true)
+                            {
+                                $.ajax({
+                                    url: "http://39.108.136.58:8080/del/partner",    //备案所有
+                                    dataType: "json",   //返回格式为json
+                                    data: {
+                                        id:dataid
+                                    },    //参数值
+                                    type: "GET",   //请求方式
+                                    success: function (req) {
+                                        alert('成功')
+                                        loadpartner()
+                                    }
+                                })
+                            }
+                            else if(mymessage==false)
+                            {
+                                return;
+                            }
+
+
+
+                    })
+                }
+            })
+        }
+
+        function can_lince() {
+            var selectdata = '';
+            window.province.forEach(function (t) {
+                var province = t.name;
+                selectdata +='<option value='+province+'>'+province+'</option>'
+            });
+            $(".province_all_select3").html(selectdata);
+            var selectdata_city = '<option value=房山区>房山区</option><option value=大兴区>大兴区</option><option value=通州区>通州区</option><option value=西城区>西城区</option><option value=丰台区>丰台区</option><option value=朝阳区>朝阳区</option><option value=顺义区>顺义区</option><option value=怀柔区>怀柔区</option><option value=延庆县>延庆县</option><option value=昌平区>昌平区</option><option value=门头沟区>门头沟区</option><option value=密云县>密云县</option><option value=平谷区>平谷区</option><option value=海淀区>海淀区</option><option value=石景山区>石景山区</option>';
+            $(".city_all_select3").html(selectdata_city);
+
+            $("#province_select3").change(function(){
+                var selectdata_city = '';
+                var in_province = $(this).val();
+                window.chinamap.forEach(function(v,k){
+                    if(v.province == in_province){
+                        var citylist = v.city;
+                        citylist.forEach(function (t) {
+                            var city = t.name;
+                            selectdata_city +='<option value='+city+'>'+city+'</option>'
+                        })
+
+                        $(".city_all_select3").html(selectdata_city);
+                    }
+                })
+            });
+            $(".can_lince_sure").on("click",function () {
+                var province = $(".province_all_select3").val()
+                var city = $(".city_all_select3").val()
+            })
+        }
+
+    })
+
+</script>
