@@ -262,9 +262,9 @@ body{
     margin-bottom: 10px;
 }
 .canvas_box{
-    width:54%;
+    width:64%;
     min-height:520px;
-    margin-left:23%;
+    margin-left:18%;
     margin-top:0px;
     position: relative;
 }
