@@ -1,1 +1,83 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"><title>后台系统</title><link rel="shortcut icon" type=image/x-icon href=static/favicon.ico><link href=./static/css/app.73cdaf4d8e612a0b746bcc8dcff1f5ef.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.b9f3f2bc918f6bee88e3.js></script><script type=text/javascript src=./static/js/vendor.a40986242694e89bfa0f.js></script><script type=text/javascript src=./static/js/app.8a3712d9fb2d881467da.js></script></body></html>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/index.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+<div class="page">
+	<div class="head">
+		抵押超期数
+		<div class="title">
+			<div class="group">
+				<span class="groop_icon"></span>
+				河北保定刘海川团队
+			</div>
+			<div class="divide"></div>
+			<div class="user">
+				<span class="user_icon"></span>
+				赵紫钗
+			</div>
+			<div class="staus">
+				放款-未抵押
+			</div>
+		</div>
+	</div>
+
+	<div class="table">
+		<ul>
+			<li class="li_one ul_title">
+				<span class="user">客户</span>
+				<span class="car">车型</span>
+				<span class="money">贷款金额</span>
+				<span class="date">抵押超期天数</span>
+			</li>
+		</ul>
+		<ul>
+			<li class="li_one">
+				<span class="user">张xx</span>
+				<span class="car">大众</span>
+				<span class="money">1000</span>
+				<span class="date">19</span>
+			</li>
+			<li class="li_one">
+				<span class="user">张xx</span>
+				<span class="car">大众</span>
+				<span class="money">1000</span>
+				<span class="date">19</span>
+			</li>
+		</ul>
+		<ul>
+			<li class="li_one">
+				<span class="user">合计</span>
+				<span class="car">&nbsp;</span>
+				<span class="money">1000</span>
+				<span class="date">&nbsp;</span>
+			</li>
+			<li class="li_one">
+				<span class="user">平均</span>
+				<span class="car">&nbsp;</span>
+				<span class="money">1000</span>
+				<span class="date">&nbsp;</span>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+<script type="text/javascript">
+mui(document.body).on('tap', '.mui-btn', function(e) {
+    mui(this).button('loading');
+    mui.alert('123','tishi')
+    setTimeout(function() {
+        mui(this).button('reset');
+    }.bind(this), 2000);
+});
+</script>
+</html>

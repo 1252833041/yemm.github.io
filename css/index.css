@@ -1,0 +1,114 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: #fff;
+    font-family: "微软雅黑";
+}
+.page .head{
+    height:112px;
+    width:100%;
+    background-color: #00ABFF;
+    color: #fff;
+    line-height: 112px;
+    text-align: center;
+    position: relative;
+}
+.page .head .title{
+    width: 100%;
+    height: 24px;
+    position: absolute;
+    bottom: 0;
+}
+.head .group{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+    padding-left: 36px;
+    float: left;
+    padding-right: 10px;
+
+}
+.head .user{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+    padding-left: 24px;
+    float: left;
+    padding-right: 10px;
+}
+.group .groop_icon{
+    width: 15px;
+    height:15px;
+    display: inline-block;
+    background: url("../image/group.png");
+    background-size: cover;
+    position: absolute;
+    left:18px;
+    top:4px;
+}
+.user .user_icon{
+    width: 9px;
+    height:11px;
+    display: inline-block;
+    background: url("../image/user.png");
+    background-size: cover;
+    position: absolute;
+    left:10px;
+    top:6px;
+}
+.title .divide{
+    width: 1px;
+    height: 12px;
+    float: left;
+    border-left: #66c1ff solid 2px;
+    margin-top: 6px;
+}
+.title .staus{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+    padding-left: 24px;
+    float: right;
+    padding-right: 20px;
+}
+.table{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.table li{
+    list-style: none;
+    font-size: 12px;
+    height:38px;
+    line-height: 38px;
+}
+.table li .user{
+    width:60px;
+    display: inline-block;
+}
+.table li .car{
+    width:82px;
+    display: inline-block;
+}
+.table li .money{
+    width:80px;
+    display: inline-block;
+    text-align: center;
+}
+.table li .date{
+    width:100px;
+    display: inline-block;
+    text-align: right;
+}
+.ul_title{
+    height:50px !important;
+    line-height: 50px !important;
+    border-bottom: #EEEEEE solid 2px !important;
+}
+.li_one{
+    border-bottom: #E0E0E0 solid 1px;
+}

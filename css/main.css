@@ -1,0 +1,354 @@
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+body{
+    background-color: #f4f4f8;
+    font-family: "微软雅黑";
+}
+.page .head{
+    height:188px;
+    width:100%;
+    background-color: #00ABFF;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+.page .head .the_title{
+    font-size: 20px;
+    padding-top: 48px;
+}
+.page .head .date{
+    font-size: 12px;
+    padding-top: 7px;
+    font-weight: 300;
+}
+.page .head .title{
+    width: 100%;
+    height: 24px;
+    margin-top: 21px;
+}
+.head .group{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+    padding-left: 38px;
+    float: left;
+    padding-right: 10px;
+
+}
+.head .user{
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+    position: relative;
+    padding-left: 24px;
+    float: left;
+    padding-right: 10px;
+}
+.group .groop_icon{
+    width: 15px;
+    height:15px;
+    display: inline-block;
+    background: url("../image/group.png");
+    background-size: cover;
+    position: absolute;
+    left:18px;
+    top:4px;
+}
+.user .user_icon{
+    width: 9px;
+    height:11px;
+    display: inline-block;
+    background: url("../image/user.png");
+    background-size: cover;
+    position: absolute;
+    left:10px;
+    top:6px;
+}
+.title .divide{
+    width: 1px;
+    height: 12px;
+    float: left;
+    border-left: #66c1ff solid 2px;
+    margin-top: 6px;
+}
+.user_label{
+    height: auto;
+    width: 252px;
+    position: relative;
+    overflow: hidden;
+    margin:0 auto;
+}
+.main_info{
+    width: 300px;
+    margin: 0 auto;
+    height: 21px;
+    position: relative;
+    margin-top: 14px;
+}
+.main_idcard{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url("../image/idcard.png");
+    background-size: cover;
+    position: relative;
+    top:3px;
+
+}
+.main_phone{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    background: url("../image/phone.png");
+    background-size: cover;
+    position: relative;
+    top:3px;
+
+}
+.idcard,.phone{
+    font-size: 14px;
+}
+.idcard{
+    width: 170px;
+    float: left;
+}
+.phone{
+    width:105px;
+    float: left;
+    margin-left: 18px;
+}
+.behavior{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    background: -webkit-linear-gradient(#00ABFF, #f4f4f8);
+    background: -o-linear-gradient(#00ABFF, #f4f4f8); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#00ABFF, #f4f4f8); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#00ABFF, #f4f4f8); /* 标准的语法（必须放在最后） */
+    margin-bottom: 10px;
+}
+.inner_box{
+    background-color: #fff;
+    margin-left: 7px;
+    margin-right: 7px;
+    padding:0 14px;
+}
+.inner_top{
+    height:50px;
+    line-height: 50px;
+    font-size: 13px;
+    position: relative;
+
+}
+.final{
+    float: right;
+    margin-top: 12px;
+}
+.final2{
+    float: right;
+    margin-top: 7px;
+    font-size: 13px;
+}
+.final div{
+    width: 22px;
+    height:22px;
+    line-height: 22px;
+    text-align: center;
+    float: right;
+    color: #fff;
+}
+.final2 div{
+    width: 22px;
+    height:22px;
+    line-height: 22px;
+    text-align: center;
+    float: right;
+    color: #fff;
+}
+.low{
+    background-color:#00D762;
+}
+.mid{
+    background-color: #FF9000;
+}
+.high{
+    background-color: #EC4C4C;
+}
+.dbline{
+    width: 100%;
+    height: 3px;
+    border-top: #EEEEEE solid 1px;
+    border-bottom: #EEEEEE solid 1px;
+}
+.input_top{
+    height:34px;
+    line-height: 34px;
+    font-size: 12px;
+    border-bottom: #F4F4F4 dashed 1px;
+}
+.input_top .info{
+    float: right;
+    color: #EC7475;
+}
+.card_list{
+    width: 50%;
+    color: #5D5D5D;
+    font-size: 12px;
+    float: left;
+}
+.card_list .inner_index{
+    width: 12px;
+    height:12px;
+    display: inline-block;
+    background-color: #E7F4FF;
+    line-height: 12px;
+    text-align: center;
+    border-radius: 1px;
+    color: #2498F7;
+
+}
+.input_inner ul li{
+    height:36px;
+    line-height: 36px;
+    border-bottom: #F4F4F4 dashed 1px;
+}
+.final_input .check{
+    width:15px;
+    height: 15px;
+    font-size: 12px;
+    display: inline-block;
+    background: url("../image/icon_check.png");
+    position: absolute;
+    top: 10px;
+    background-size: cover;
+    left: 0;
+}
+.check_box{
+     color: #2498F7;
+     height: 36px;         
+     line-height: 36px;
+     display:inline-block;
+     font-size: 12px;
+     position: relative; 
+     text-indent: 20px;
+}
+.card_num{
+    float: right;
+    display: inline-block;
+    height:36px;
+    line-height: 36px;
+    font-size: 12px;
+}
+.behavior_icon{
+    width:22px;
+    height:22px;
+    display: inline-block;
+    background: url("../image/icon_activity.png");
+    position: absolute;
+    top:13px;
+    left:0px;
+}
+.left_inner{
+    position: relative;
+    float: left;
+    text-indent: 28px;
+}
+.apply_icon{
+    width:22px;
+    height:22px;
+    display: inline-block;
+    background: url("../image/icon_money.png");
+    position: absolute;
+    top:13px;
+    left:0px;
+}
+.car_icon{
+    width:22px;
+    height:22px;
+    display: inline-block;
+    background: url("../image/icon_car.png");
+    position: absolute;
+    top:13px;
+    left:0px;
+}
+.apply_result .apply_tit{
+    color: #EC7475;
+    font-size: 12px;
+}
+.apply_result{
+    height:36px;
+    line-height: 36px;
+    border-bottom: #F4F4F4 dashed 1px;
+}
+.apply_li{
+    color: #5D5D5D;
+    font-size: 12px;
+    height:36px;
+    line-height: 36px;
+    border-bottom: #F4F4F4 dashed 1px;
+}
+.idcard_num{
+    color: #EB4F40;
+    font-size: 15px;
+}
+.apply_detail{
+    border-bottom:#e7e7e8 solid 2px;
+}
+.apply_detail:last-child{
+    border-bottom:none;
+}
+.apply{
+    margin-bottom: 10px;
+}
+.result_box{
+
+}
+.belief_icon{
+    width:22px;
+    height:22px;
+    display: inline-block;
+    background: url("../image/icon_belief.png");
+    position: absolute;
+    top:13px;
+    left:0px;
+}
+.result_box ul li{
+    font-size: 12px;
+    border-bottom: #F4F4F4 dashed 1px;
+    color: #5D5D5D;
+    height: 35px;
+    line-height: 35px;
+}
+.result_box ul li i{
+    background-color: #00D762;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: #fff;
+    float: right;
+    height:16px;
+    line-height: 16px;
+    margin-top: 10px;
+}
+.right_inner{
+    float: right;
+    color: #EC4C4C;
+}
+.apply_li i{
+    width: 14px;
+    font-size: 10px;
+    height: 14px;
+    text-align: center;
+    line-height: 14px;
+    color: #fff;
+    display: inline-block;
+    background-color: #EC7475;
+    float: right;
+    margin-top: 11px;
+
+}
